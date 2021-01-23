@@ -1,0 +1,90 @@
+[colors]
+background = #282a36
+purple = #bd93f9
+
+[bar/main]
+font-0 = "Noto Sans:size=11;2"
+font-1 = "Font Awesome 5 Free:style=Solid;3"
+modules-right =pulseaudio  date
+modules-left = i3
+modules-center = xwindow
+
+background = ${colors.background}
+border-bottom-size = 3px
+border-bottom-color = ${colors.purple}
+module-margin-left = 0
+module-margin-right = 5
+
+[module/date]
+type = internal/date
+interval = 1
+date = " %a, %d %B |"
+time = "%H:%M:%S "
+format-prefix = 
+format-prefix-foreground = ${colors.background}
+format-background = ${colors.purple}
+format-foreground = ${colors.background}
+label = "%date% %time%  %{A}"
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+interval = 5
+format-volume = <label-volume>
+label-muted =  muted
+label-muted-foreground = #666
+label-volume = "  %percentage%"
+
+
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+pin-workspaces = true
+ws-icon-0 = 1;I
+ws-icon-1 = 2;II
+ws-icon-2 = 3;III
+ws-icon-3 = 4;VI
+ws-icon-4 = 5;V
+ws-icon-5 = 6;VI
+ws-icon-6 = 7;VII
+ws-icon-7 = 8;VIII
+ws-icon-8 = 9;IX
+ws-icon-9 = 10;X
+ws-icon-default = lel
+
+format = <label-state> <label-mode>
+
+label-mode = "%mode%"
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.purple}
+label-mode-padding = 1
+
+label-focused = "%icon%"
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.purple}
+label-focused-underline = 
+label-focused-padding = 3
+
+label-unfocused = "%icon%"
+label-unfocused-padding = 3
+
+label-urgent = "%icon%"
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 4
+
+label-visible-foreground = ${colors.foreground}
+label-visible-background = ${colors.background}
+label-visible-padding = 4
+
+[module/xwindow]
+type = internal/xwindow
+
+format-background = 
+format-foreground = ${colors.purple}
+format-padding = 0
+
+
+label = "%title%"
+label-maxlen = 50
+
